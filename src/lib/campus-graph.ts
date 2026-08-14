@@ -172,7 +172,7 @@ export function astar(start: string, goal: string): SearchResult {
       frontier: [...open],
       visited: [...closed],
       note: node === goal ? "Goal reached — optimal path found" : `Expanded ${nodeById(node).label}`,
-      g: g[node],
+      g: g[node] ?? 0,
       h: h(node),
       f: g[node]! + h(node),
     });
