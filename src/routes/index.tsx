@@ -74,7 +74,7 @@ function Landing() {
   const conflicts = useTable("conflicts");
 
   const resolved = conflicts.data?.length
-    ? Math.round((conflicts.data.filter((c) => c.status === "resolved").length / conflicts.data.length) * 100) || 83
+    ? Math.round((conflicts.data.filter((c) => c["status"] === "resolved").length / conflicts.data.length) * 100) || 83
     : 97;
 
   const building = CAMPUS_BUILDINGS.find((b) => b.id === selected);
