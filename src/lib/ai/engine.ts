@@ -29,7 +29,7 @@ export type ScoredCandidate = {
   breakdown: { label: string; weight: number; value: number }[];
   rules: RuleEvaluation[];
   eliminated: boolean;
-  eliminationReason?: string;
+  eliminationReason?: string | undefined;
 };
 
 export type RequestSpec = {
