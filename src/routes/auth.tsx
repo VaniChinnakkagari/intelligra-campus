@@ -77,24 +77,18 @@ function AuthPage() {
   }
 
   async function google() {
-    try {
-      const { lovable } = await import("@/integrations/lovable/index");
-      const result = await lovable.auth.signInWithOAuth("google", {
-        redirect_uri: window.location.origin,
-      });
-      if (result.error) {
-        toast.error("Google sign-in unavailable", { description: String(result.error) });
-        return;
-      }
-      if (result.redirected) return;
-      navigate({ to: "/dashboard" });
-    } catch {
-      toast.error("Google sign-in is not configured yet");
-    }
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: { redirectTo: window.location.origin },
+    });
+    if (error) toast.error("Google sign-in unavailable", { description: error.message });
   }
 
   async function forgot() {
-    if (!email) return toast.error("Enter your email first");
+    if (!email) {
+      toast.error("Enter your email first");
+      return;
+    }
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
       redirectTo: `${window.location.origin}/auth`,
     });
