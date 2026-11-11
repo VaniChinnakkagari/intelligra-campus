@@ -4,6 +4,7 @@ import { twMerge } from "tailwind-merge";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+<<<<<<< HEAD
 /**
  * Format a date/timestamp to IST timezone
  */
@@ -29,3 +30,5 @@ export function formatISTWithDate(date: string | Date): string {
     timeZone: "Asia/Kolkata",
   });
 }
+=======
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87

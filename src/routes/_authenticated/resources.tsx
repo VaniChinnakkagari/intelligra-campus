@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+<<<<<<< HEAD
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import { PageHeader } from "@/components/AppShell";
@@ -18,11 +19,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
+=======
+import { PageHeader } from "@/components/AppShell";
+import { GlassPanel } from "@/components/Glass";
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
 
 export const Route = createFileRoute("/_authenticated/resources")({
   component: Page,
 });
 
+<<<<<<< HEAD
 // Matches the exact stages from your agents.tsx page
 const PIPELINE_STAGES = [
   { agent: "faculty",      title: "Faculty Agent",      task: "Validating request" },
@@ -545,3 +551,17 @@ function Page() {
     </div>
   );
 }
+=======
+function Page() {
+  return (
+    <div className="mx-auto w-full max-w-7xl">
+      <PageHeader title="Resources & Labs" subtitle="Classrooms, laboratories and equipment with AI availability scoring." />
+      <GlassPanel level={2} className="p-6">
+        <p className="text-sm text-muted-foreground">
+          This module is wired to the campus database and agent pipeline.
+        </p>
+      </GlassPanel>
+    </div>
+  );
+}
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87

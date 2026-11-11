@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/AppShell";
 import { GlassPanel } from "@/components/Glass";
+<<<<<<< HEAD
 import { useTable } from "@/lib/api";
 import {
   Users, UserCog, Building2, Computer, Bus, CalendarClock,
@@ -8,12 +9,15 @@ import {
   BarChart3, RefreshCw
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+=======
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
 
 export const Route = createFileRoute("/_authenticated/analytics")({
   component: Page,
 });
 
 function Page() {
+<<<<<<< HEAD
   const { data: students } = useTable("students");
   const { data: faculty } = useTable("faculty");
   const { data: requests } = useTable("requests");
@@ -441,3 +445,16 @@ function Page() {
     </div>
   );
 }
+=======
+  return (
+    <div className="mx-auto w-full max-w-7xl">
+      <PageHeader title="Analytics" subtitle="Utilisation, load and efficiency across the campus." />
+      <GlassPanel level={2} className="p-6">
+        <p className="text-sm text-muted-foreground">
+          This module is wired to the campus database and agent pipeline.
+        </p>
+      </GlassPanel>
+    </div>
+  );
+}
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87

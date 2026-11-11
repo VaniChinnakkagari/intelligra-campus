@@ -6,6 +6,7 @@ export type Row = Record<string, any>;
 /** Generic, table-name-agnostic accessor (the generated client requires literal table names). */
 const db = supabase as unknown as { from: (table: string) => any };
 
+<<<<<<< HEAD
 /**
  * Generic table reader used across dashboards and admin modules.
  * Auto-refreshes every 10 seconds so admin changes appear live for everyone.
@@ -19,6 +20,12 @@ export function useTable<T = Row>(
     select?: string;
     refetchInterval?: number; // override the default 10s
   } = {},
+=======
+/** Generic table reader used across dashboards and admin modules. */
+export function useTable<T = Row>(
+  table: string,
+  opts: { order?: string; ascending?: boolean; limit?: number; select?: string } = {},
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
 ) {
   return useQuery({
     queryKey: ["table", table, opts],
@@ -30,9 +37,13 @@ export function useTable<T = Row>(
       if (error) throw new Error(error.message);
       return (data ?? []) as T[];
     },
+<<<<<<< HEAD
     staleTime: 5_000,
     refetchInterval: opts.refetchInterval ?? 10_000, // auto-refresh every 10s
     refetchOnWindowFocus: true,
+=======
+    staleTime: 30_000,
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
   });
 }
 
@@ -44,12 +55,19 @@ export function useCount(table: string) {
       if (error) throw new Error(error.message);
       return count ?? 0;
     },
+<<<<<<< HEAD
     staleTime: 10_000,
     refetchInterval: 15_000,
   });
 }
 
 /** Only admins should call useUpsert / useRemove. */
+=======
+    staleTime: 60_000,
+  });
+}
+
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
 export function useUpsert(table: string) {
   const qc = useQueryClient();
   return useMutation({
@@ -61,7 +79,10 @@ export function useUpsert(table: string) {
       return data;
     },
     onSuccess: () => {
+<<<<<<< HEAD
       // Immediately invalidate so all views refresh on next tick
+=======
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
       qc.invalidateQueries({ queryKey: ["table", table] });
       qc.invalidateQueries({ queryKey: ["count", table] });
     },
@@ -81,4 +102,8 @@ export function useRemove(table: string) {
       qc.invalidateQueries({ queryKey: ["count", table] });
     },
   });
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87

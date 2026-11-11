@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+<<<<<<< HEAD
 import { useState } from "react";
 import { PageHeader } from "@/components/AppShell";
 import { GlassPanel } from "@/components/Glass";
@@ -376,3 +377,24 @@ function KnowledgeGraphPage() {
     </div>
   );
 }
+=======
+import { PageHeader } from "@/components/AppShell";
+import { GlassPanel } from "@/components/Glass";
+
+export const Route = createFileRoute("/_authenticated/knowledge")({
+  component: Page,
+});
+
+function Page() {
+  return (
+    <div className="mx-auto w-full max-w-7xl">
+      <PageHeader title="Knowledge Graph" subtitle="Entities and relationships the agents reason over." />
+      <GlassPanel level={2} className="p-6">
+        <p className="text-sm text-muted-foreground">
+          This module is wired to the campus database and agent pipeline.
+        </p>
+      </GlassPanel>
+    </div>
+  );
+}
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/AppShell";
+<<<<<<< HEAD
 import { GlassPanel, StatusDot } from "@/components/Glass";
 import { useTable } from "@/lib/api";
 import { useState, useEffect } from "react";
@@ -12,11 +13,15 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+=======
+import { GlassPanel } from "@/components/Glass";
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
 
 export const Route = createFileRoute("/_authenticated/conflicts")({
   component: Page,
 });
 
+<<<<<<< HEAD
 type Conflict = {
   id: string;
   conflict_type: string;
@@ -376,3 +381,17 @@ function Page() {
     </div>
   );
 }
+=======
+function Page() {
+  return (
+    <div className="mx-auto w-full max-w-7xl">
+      <PageHeader title="Conflict Center" subtitle="Detected scheduling and resource conflicts with AI resolutions." />
+      <GlassPanel level={2} className="p-6">
+        <p className="text-sm text-muted-foreground">
+          This module is wired to the campus database and agent pipeline.
+        </p>
+      </GlassPanel>
+    </div>
+  );
+}
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87

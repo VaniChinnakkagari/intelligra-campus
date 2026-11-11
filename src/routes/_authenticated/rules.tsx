@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/AppShell";
 import { GlassPanel } from "@/components/Glass";
+<<<<<<< HEAD
 import { useTable, useUpsert } from "@/lib/api";
 import { useState, useMemo } from "react";
 import {
@@ -10,11 +11,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
+=======
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
 
 export const Route = createFileRoute("/_authenticated/rules")({
   component: Page,
 });
 
+<<<<<<< HEAD
 type Rule = {
   id: string;
   name: string;
@@ -604,3 +608,17 @@ function evaluateRule(rule: Rule, ctx: any): EvaluationResult {
     reasoning: "Rule evaluation not configured for this scenario",
   };
 }
+=======
+function Page() {
+  return (
+    <div className="mx-auto w-full max-w-7xl">
+      <PageHeader title="Rule Engine" subtitle="Declarative rules driving automated campus decisions." />
+      <GlassPanel level={2} className="p-6">
+        <p className="text-sm text-muted-foreground">
+          This module is wired to the campus database and agent pipeline.
+        </p>
+      </GlassPanel>
+    </div>
+  );
+}
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87

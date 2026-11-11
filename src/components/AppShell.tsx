@@ -1,5 +1,8 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
+<<<<<<< HEAD
 import { useTable } from "@/lib/api";
+=======
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
 import { AnimatePresence, motion } from "framer-motion";
 import {
   Activity,
@@ -10,6 +13,10 @@ import {
   Bus,
   CalendarClock,
   Command,
+<<<<<<< HEAD
+=======
+  Cpu,
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
   Gauge,
   GraduationCap,
   Home,
@@ -44,11 +51,15 @@ import {
 type NavItem = { to: string; label: string; icon: typeof Home; roles?: Array<"student" | "faculty" | "admin"> };
 
 const NAV: NavItem[] = [
+<<<<<<< HEAD
   // Everyone sees these
+=======
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
   { to: "/dashboard", label: "Overview", icon: Home },
   { to: "/timetable", label: "Timetable", icon: CalendarClock },
   { to: "/resources", label: "Resources", icon: Boxes },
   { to: "/transportation", label: "Transportation", icon: Bus },
+<<<<<<< HEAD
   { to: "/requests", label: "My Requests", icon: Inbox },
   { to: "/assistant", label: "AI Assistant", icon: Sparkles },
   
@@ -65,6 +76,18 @@ const NAV: NavItem[] = [
   { to: "/admin", label: "Admin Modules", icon: Table2, roles: ["admin"] },
   
   // Everyone
+=======
+  { to: "/requests", label: "Requests", icon: Inbox },
+  { to: "/assistant", label: "AI Assistant", icon: Sparkles },
+  { to: "/agents", label: "Agent Control", icon: Network },
+  { to: "/algorithms", label: "Algorithm Lab", icon: Workflow },
+  { to: "/knowledge", label: "Knowledge Graph", icon: Activity },
+  { to: "/rules", label: "Rule Engine", icon: Gauge },
+  { to: "/conflicts", label: "Conflict Center", icon: ShieldAlert },
+  { to: "/decisions", label: "AI Decisions", icon: Bot },
+  { to: "/analytics", label: "Analytics", icon: BarChart3, roles: ["faculty", "admin"] },
+  { to: "/admin", label: "Admin Modules", icon: Table2, roles: ["admin"] },
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
   { to: "/notifications", label: "Notifications", icon: Bell },
   { to: "/settings", label: "Settings", icon: Settings },
 ];
@@ -91,8 +114,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const navigate = useNavigate();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const { prefs, setPref } = usePrefs();
+<<<<<<< HEAD
     const { data: notifications } = useTable("notifications");
   const unreadCount = notifications?.filter((n: any) => n.is_read === false).length || 0;
+=======
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
   const [open, setOpen] = useState(false);
   const [paletteOpen, setPaletteOpen] = useState(false);
 
@@ -138,6 +164,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             )}
           >
             <div className="flex items-center justify-between">
+<<<<<<< HEAD
              <Link to="/dashboard" className="flex items-center gap-2.5 px-1 py-2">
   <img
     src="/ai-core.png"
@@ -148,6 +175,16 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     MITS <span className="text-primary">Campus AI</span>
   </span>
 </Link>
+=======
+              <Link to="/dashboard" className="flex items-center gap-2.5 px-1 py-2">
+                <span className="grid size-8 place-items-center rounded-lg bg-primary/15 text-primary">
+                  <Cpu className="size-4" />
+                </span>
+                <span className="font-display text-sm font-semibold">
+                  NEXUS <span className="text-primary">AI</span>
+                </span>
+              </Link>
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
               <button className="lg:hidden" onClick={() => setOpen(false)} aria-label="Close navigation">
                 <X className="size-4" />
               </button>
@@ -190,7 +227,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 to="/demo"
                 className="glass flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-primary transition-all hover:shadow-glow"
               >
+<<<<<<< HEAD
                 <PlayCircle className="size-4" /> MITS Live demo
+=======
+                <PlayCircle className="size-4" /> Live AI demo
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
               </Link>
               <button
                 onClick={async () => {
@@ -218,7 +259,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               className="glass flex flex-1 items-center gap-2 rounded-xl px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               <Search className="size-4" />
+<<<<<<< HEAD
               <span className="truncate">Search MITS campus…</span>
+=======
+              <span className="truncate">Search campus…</span>
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
               <span className="ml-auto hidden items-center gap-1 font-mono text-[10px] sm:flex">
                 <Command className="size-3" />K
               </span>
@@ -232,6 +277,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 Live data
               </span>
             )}
+<<<<<<< HEAD
           <Link to="/notifications" className="relative text-muted-foreground hover:text-foreground transition-colors" aria-label="Notifications">
   <Bell className="size-5" />
   {unreadCount > 0 && (
@@ -241,6 +287,12 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     </span>
   )}
 </Link>
+=======
+            <Link to="/notifications" className="relative text-muted-foreground hover:text-foreground" aria-label="Notifications">
+              <Bell className="size-5" />
+              <span className="absolute -top-0.5 -right-0.5 size-2 rounded-full bg-primary" />
+            </Link>
+>>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
             <Link to="/settings" aria-label="Profile" className="flex items-center gap-2">
               <span className="grid size-8 place-items-center rounded-full bg-primary/15 text-xs font-semibold text-primary">
                 {(user?.email ?? "N")[0]!.toUpperCase()}
