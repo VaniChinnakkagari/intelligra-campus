@@ -6,10 +6,6 @@ import {
   Brain,
   Bus,
   CalendarClock,
-<<<<<<< HEAD
-=======
-  Cpu,
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
   Eye,
   Layers,
   Network,
@@ -17,36 +13,21 @@ import {
   Sparkles,
 } from "lucide-react";
 import { useState } from "react";
-<<<<<<< HEAD
 import { AgentNetwork } from "@/components/landing/AgentNetwork";
 import { GlassPanel, SectionHeading, StatCard, fadeUp } from "@/components/Glass";
-=======
-import { AICoreScene, CampusScene } from "@/components/three/Scene";
-import { AgentNetwork } from "@/components/landing/AgentNetwork";
-import { GlassPanel, SectionHeading, StatCard, fadeUp } from "@/components/Glass";
-import { CAMPUS_BUILDINGS } from "@/components/three/Campus3D";
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
 import { Button } from "@/components/ui/button";
 import { useTable } from "@/lib/api";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-<<<<<<< HEAD
       { title: "MITS Campus AI — INTELLIGENT. CONNECTED. AUTONOMOUS." },
-=======
-      { title: "Nexus Campus AI — Intelligent Campus, Connected by AI" },
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
       {
         name: "description",
         content:
           "A multi-agent AI platform that coordinates classrooms, faculty, students, laboratories, timetables and transportation in real time.",
       },
-<<<<<<< HEAD
       { property: "og:title", content: "MITS Campus AI — Intelligent Campus, Connected by AI" },
-=======
-      { property: "og:title", content: "Nexus Campus AI — Intelligent Campus, Connected by AI" },
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
       {
         property: "og:description",
         content:
@@ -60,7 +41,6 @@ export const Route = createFileRoute("/")({
 });
 
 const BUILDING_INFO: Record<string, { rooms: number; labs: number; utilization: number; free: number }> = {
-<<<<<<< HEAD
   kk:         { rooms: 24, labs: 3,  utilization: 72, free: 8 },
   west:       { rooms: 18, labs: 5,  utilization: 85, free: 3 },
   south:      { rooms: 30, labs: 2,  utilization: 68, free: 9 },
@@ -86,21 +66,6 @@ const CAMPUS_HOTSPOTS = [
   { id: "library",    label: "Library",          shortLabel: "Library",   x: 66.5, y: 14.5 },
   { id: "research",   label: "Research Block",   shortLabel: "Research",  x: 89.1, y: 16.2 },
 ];
-=======
-  gate: { rooms: 0, labs: 0, utilization: 12, free: 0 },
-  academic: { rooms: 32, labs: 4, utilization: 71, free: 7 },
-  cse: { rooms: 24, labs: 5, utilization: 82, free: 4 },
-  library: { rooms: 8, labs: 0, utilization: 64, free: 3 },
-  complab: { rooms: 4, labs: 4, utilization: 78, free: 1 },
-  sciencelab: { rooms: 3, labs: 3, utilization: 47, free: 2 },
-  auditorium: { rooms: 1, labs: 0, utilization: 32, free: 1 },
-  cafeteria: { rooms: 2, labs: 0, utilization: 55, free: 2 },
-  sports: { rooms: 4, labs: 0, utilization: 41, free: 3 },
-  hostel: { rooms: 120, labs: 0, utilization: 88, free: 12 },
-  parking: { rooms: 0, labs: 0, utilization: 66, free: 0 },
-  busstop: { rooms: 0, labs: 0, utilization: 74, free: 0 },
-};
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
 
 const FEATURES = [
   { icon: CalendarClock, title: "Intelligent Scheduling", body: "A CSP solver with constraint propagation generates conflict-free timetables." },
@@ -113,12 +78,9 @@ const FEATURES = [
 
 function Landing() {
   const [selected, setSelected] = useState<string | null>("cse");
-<<<<<<< HEAD
   const [debugMode, setDebugMode] = useState(false);
   const [debugPosition, setDebugPosition] = useState<string | null>(null);
 
-=======
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
   const decisions = useTable("ai_decisions");
   const agents = useTable("agents");
   const conflicts = useTable("conflicts");
@@ -127,11 +89,7 @@ function Landing() {
     ? Math.round((conflicts.data.filter((c) => c["status"] === "resolved").length / conflicts.data.length) * 100) || 83
     : 97;
 
-<<<<<<< HEAD
   const building = CAMPUS_HOTSPOTS.find((b) => b.id === selected);
-=======
-  const building = CAMPUS_BUILDINGS.find((b) => b.id === selected);
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
   const info = selected ? BUILDING_INFO[selected] : undefined;
 
   return (
@@ -140,7 +98,6 @@ function Landing() {
       <header className="fixed inset-x-0 top-0 z-40 px-4 pt-4">
         <nav className="glass-2 glass-inset mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-4 py-3">
           <Link to="/" className="flex items-center gap-2.5">
-<<<<<<< HEAD
             <img
               src="/ai-core.png"
               alt="MITS Campus AI"
@@ -148,13 +105,6 @@ function Landing() {
             />
             <span className="font-display text-sm font-semibold tracking-tight">
               MITS <span className="text-primary">CAMPUS AI</span>
-=======
-            <span className="grid size-8 place-items-center rounded-lg bg-primary/15 text-primary">
-              <Cpu className="size-4" />
-            </span>
-            <span className="font-display text-sm font-semibold tracking-tight">
-              NEXUS <span className="text-primary">CAMPUS AI</span>
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
             </span>
           </Link>
           <div className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
@@ -198,13 +148,8 @@ function Landing() {
             transition={{ delay: 0.6 }}
             className="mt-5 max-w-xl text-base text-muted-foreground"
           >
-<<<<<<< HEAD
             A multi-agent AI system built for Madanapalle Institute of Technology & Science —
             coordinating classrooms, faculty, students, labs, timetables and campus transportation in real time.
-=======
-            An intelligent multi-agent system that coordinates classrooms, faculty, students,
-            resources, timetables and transportation in real time.
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
           </motion.p>
 
           <motion.div
@@ -215,22 +160,14 @@ function Landing() {
           >
             <Button asChild size="lg" className="group rounded-xl shadow-glow">
               <Link to="/auth">
-<<<<<<< HEAD
                 ENTER MITS CAMPUS
-=======
-                ENTER SMART CAMPUS
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
                 <ArrowRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-xl bg-transparent">
               <Link to="/demo">
                 <PlayCircle className="mr-1 size-4" />
-<<<<<<< HEAD
                 WATCH MITS CAMPUS
-=======
-                WATCH AI DEMO
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
               </Link>
             </Button>
           </motion.div>
@@ -254,7 +191,6 @@ function Landing() {
           transition={{ delay: 0.2, duration: 0.9 }}
           className="relative"
         >
-<<<<<<< HEAD
           <GlassPanel level={2} className="relative h-[420px] overflow-hidden sm:h-[520px]">
             <video
               autoPlay
@@ -266,11 +202,6 @@ function Landing() {
               <source src="/ai-video.mp4" type="video/mp4" />
             </video>
             <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-2 bg-gradient-to-t from-background/80 to-transparent p-4 text-[10px] tracking-[0.2em] text-muted-foreground uppercase">
-=======
-          <GlassPanel level={2} className="h-[420px] overflow-hidden sm:h-[520px]">
-            <AICoreScene />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-2 p-4 text-[10px] tracking-[0.2em] text-muted-foreground uppercase">
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
               <span className="font-mono">Campus AI Core</span>
               <span className="font-mono">10 agents online</span>
             </div>
@@ -287,7 +218,6 @@ function Landing() {
         />
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((f, i) => (
-<<<<<<< HEAD
             <motion.div
               key={f.title}
               {...fadeUp}
@@ -295,9 +225,6 @@ function Landing() {
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.05 }}
             >
-=======
-            <motion.div key={f.title} {...fadeUp} whileInView={fadeUp.animate} viewport={{ once: true }} transition={{ duration: 0.45, delay: i * 0.05 }}>
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
               <GlassPanel hover className="h-full p-6">
                 <span className="grid size-10 place-items-center rounded-xl bg-primary/12 text-primary">
                   <f.icon className="size-5" />
@@ -310,7 +237,6 @@ function Landing() {
         </div>
       </section>
 
-<<<<<<< HEAD
       {/* ---------- INTERACTIVE CAMPUS MAP ---------- */}
       <section id="campus" className="mx-auto max-w-6xl px-4 py-16">
         <SectionHeading
@@ -415,28 +341,11 @@ function Landing() {
 
             <h3 className="text-2xl font-semibold">{building?.label ?? "Select a building"}</h3>
 
-=======
-      {/* ---------- 3D CAMPUS ---------- */}
-      <section id="campus" className="mx-auto max-w-6xl px-4 py-16">
-        <SectionHeading
-          eyebrow="Digital twin"
-          title="Explore the 3D campus"
-          subtitle="Click a building to inspect live room, laboratory and utilisation data."
-        />
-        <div className="mt-8 grid gap-4 lg:grid-cols-[1.6fr_1fr]">
-          <GlassPanel level={2} className="h-[440px] overflow-hidden">
-            <CampusScene selected={selected} onSelect={setSelected} />
-          </GlassPanel>
-          <GlassPanel level={3} className="flex flex-col gap-4 p-6">
-            <p className="font-mono text-[10px] tracking-[0.24em] text-primary uppercase">Selected structure</p>
-            <h3 className="text-2xl font-semibold">{building?.label ?? "Select a building"}</h3>
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
             {info ? (
               <dl className="grid grid-cols-2 gap-3 text-sm">
                 {[
                   ["Rooms", info.rooms],
                   ["Labs", info.labs],
-<<<<<<< HEAD
                   ["Utilization", `${info.utilization}%`],
                   ["Available rooms", info.free],
                 ].map(([k, v]) => (
@@ -444,18 +353,10 @@ function Landing() {
                     <dt className="text-[10px] tracking-[0.18em] text-muted-foreground uppercase">
                       {k}
                     </dt>
-=======
-                  ["Utilisation", `${info.utilization}%`],
-                  ["Available rooms", info.free],
-                ].map(([k, v]) => (
-                  <div key={String(k)} className="glass rounded-xl p-3">
-                    <dt className="text-[10px] tracking-[0.18em] text-muted-foreground uppercase">{k}</dt>
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
                     <dd className="mt-1 text-lg font-semibold">{v}</dd>
                   </div>
                 ))}
               </dl>
-<<<<<<< HEAD
             ) : (
               <p className="text-sm text-muted-foreground">
                 Click any glowing marker on the map to inspect that structure.
@@ -464,28 +365,16 @@ function Landing() {
 
             <div className="mt-auto flex flex-wrap gap-2">
               {CAMPUS_HOTSPOTS.map((b) => (
-=======
-            ) : null}
-            <div className="mt-auto flex flex-wrap gap-2">
-              {CAMPUS_BUILDINGS.map((b) => (
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
                 <button
                   key={b.id}
                   onClick={() => setSelected(b.id)}
                   className={`rounded-lg px-2.5 py-1 font-mono text-[10px] tracking-wider uppercase transition-all ${
-<<<<<<< HEAD
                     selected === b.id
                       ? "bg-primary/20 text-primary"
                       : "glass text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {b.shortLabel ?? b.label}
-=======
-                    selected === b.id ? "bg-primary/20 text-primary" : "glass text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {b.label}
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
                 </button>
               ))}
             </div>
@@ -516,17 +405,10 @@ function Landing() {
             <GlassPanel level={3} className="p-5">
               <p className="font-mono text-[10px] tracking-[0.2em] text-primary uppercase">Live demo</p>
               <p className="mt-2 text-sm text-muted-foreground">
-<<<<<<< HEAD
              Watch the MITS campus tour — the home of this AI system.
               </p>
               <Button asChild className="mt-4 w-full rounded-xl">
                 <Link to="/demo">WATCH MITS CAMPUS VIDEO</Link>
-=======
-                Run the full ten-step agent negotiation on a real lab request.
-              </p>
-              <Button asChild className="mt-4 w-full rounded-xl">
-                <Link to="/demo">START LIVE AI DEMO</Link>
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
               </Button>
             </GlassPanel>
           </div>
@@ -542,24 +424,13 @@ function Landing() {
             Sign in as a student, faculty member or administrator and watch the agent network coordinate your campus.
           </p>
           <Button asChild size="lg" className="rounded-xl shadow-glow">
-<<<<<<< HEAD
             <Link to="/auth">ENTER MITS CAMPUS</Link>
           </Button>
           <p className="mt-4 font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">
             MITS Campus AI · Multi-agent smart campus management system
-=======
-            <Link to="/auth">ENTER SMART CAMPUS</Link>
-          </Button>
-          <p className="mt-4 font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">
-            Nexus Campus AI · Multi-agent smart campus management system
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
           </p>
         </GlassPanel>
       </footer>
     </main>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87

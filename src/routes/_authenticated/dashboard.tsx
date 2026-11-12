@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { PageHeader } from "@/components/AppShell";
 import { GlassPanel, StatusDot } from "@/components/Glass";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
@@ -11,18 +10,12 @@ import {
   GraduationCap, Inbox, PlayCircle, Target, Loader2
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-=======
-import { createFileRoute } from "@tanstack/react-router";
-import { PageHeader } from "@/components/AppShell";
-import { GlassPanel } from "@/components/Glass";
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
 
 export const Route = createFileRoute("/_authenticated/dashboard")({
   component: Page,
 });
 
 function Page() {
-<<<<<<< HEAD
   const { user } = useSession();
   const { data: role = "student" } = useRole(user);
 
@@ -757,16 +750,3 @@ function QuickAction({ onClick, emoji, label }: { onClick: () => void; emoji: st
     </button>
   );
 }
-=======
-  return (
-    <div className="mx-auto w-full max-w-7xl">
-      <PageHeader title="Campus Overview" subtitle="Live campus telemetry, agent activity and today's schedule at a glance." />
-      <GlassPanel level={2} className="p-6">
-        <p className="text-sm text-muted-foreground">
-          This module is wired to the campus database and agent pipeline.
-        </p>
-      </GlassPanel>
-    </div>
-  );
-}
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87

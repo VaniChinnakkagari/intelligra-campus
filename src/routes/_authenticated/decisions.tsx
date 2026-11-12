@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/AppShell";
 import { GlassPanel } from "@/components/Glass";
-<<<<<<< HEAD
 import { useTable } from "@/lib/api";
 import { useMemo, useState } from "react";
 import {
@@ -12,14 +11,11 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-=======
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
 
 export const Route = createFileRoute("/_authenticated/decisions")({
   component: Page,
 });
 
-<<<<<<< HEAD
 type Decision = {
   id: string;
   request_id: string | null;
@@ -413,17 +409,3 @@ function Page() {
     </div>
   );
 }
-=======
-function Page() {
-  return (
-    <div className="mx-auto w-full max-w-7xl">
-      <PageHeader title="AI Decisions" subtitle="Explainable decision log with scores and reasoning traces." />
-      <GlassPanel level={2} className="p-6">
-        <p className="text-sm text-muted-foreground">
-          This module is wired to the campus database and agent pipeline.
-        </p>
-      </GlassPanel>
-    </div>
-  );
-}
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87

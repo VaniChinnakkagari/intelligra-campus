@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/AppShell";
-<<<<<<< HEAD
 import { GlassPanel, StatusDot } from "@/components/Glass";
 import { useTable } from "@/lib/api";
 import { useSession } from "@/hooks/useAuth";
@@ -18,15 +17,11 @@ import { runRealPipeline } from "@/lib/ai/agent-functions";
 import { type RequestSpec } from "@/lib/engine";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
-=======
-import { GlassPanel } from "@/components/Glass";
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
 
 export const Route = createFileRoute("/_authenticated/agents")({
   component: Page,
 });
 
-<<<<<<< HEAD
 const AGENT_ICONS: Record<string, any> = {
   coordinator: Network,
   student: GraduationCap,
@@ -530,17 +525,3 @@ function Page() {
     </div>
   );
 }
-=======
-function Page() {
-  return (
-    <div className="mx-auto w-full max-w-7xl">
-      <PageHeader title="Agent Control Center" subtitle="All ten specialised agents, their load and message bus." />
-      <GlassPanel level={2} className="p-6">
-        <p className="text-sm text-muted-foreground">
-          This module is wired to the campus database and agent pipeline.
-        </p>
-      </GlassPanel>
-    </div>
-  );
-}
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87

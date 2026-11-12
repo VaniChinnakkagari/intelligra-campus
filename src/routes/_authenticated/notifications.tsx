@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/AppShell";
 import { GlassPanel } from "@/components/Glass";
-<<<<<<< HEAD
 import { useTable } from "@/lib/api";
 import { useMemo, useState } from "react";
 import {
@@ -13,14 +12,11 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-=======
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
 
 export const Route = createFileRoute("/_authenticated/notifications")({
   component: Page,
 });
 
-<<<<<<< HEAD
 // 🚨 EXACT MATCH FOR THE DATABASE COLUMNS
 type Notification = {
   id: string;
@@ -388,17 +384,3 @@ function Page() {
     </div>
   );
 }
-=======
-function Page() {
-  return (
-    <div className="mx-auto w-full max-w-7xl">
-      <PageHeader title="Notifications" subtitle="Agent alerts, approvals and campus announcements." />
-      <GlassPanel level={2} className="p-6">
-        <p className="text-sm text-muted-foreground">
-          This module is wired to the campus database and agent pipeline.
-        </p>
-      </GlassPanel>
-    </div>
-  );
-}
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87

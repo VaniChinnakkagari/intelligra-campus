@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/AppShell";
 import { GlassPanel } from "@/components/Glass";
-<<<<<<< HEAD
 import { usePrefs } from "@/hooks/usePrefs";
 import { useSession, useRole } from "@/hooks/useAuth";
 import { useState } from "react";
@@ -17,15 +16,12 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { useNavigate } from "@tanstack/react-router";
-=======
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
 
 export const Route = createFileRoute("/_authenticated/settings")({
   component: Page,
 });
 
 function Page() {
-<<<<<<< HEAD
   const { user } = useSession();
   const { data: role = "student" } = useRole(user);
   const { prefs, setPref } = usePrefs();
@@ -367,16 +363,3 @@ function Page() {
     </div>
   );
 }
-=======
-  return (
-    <div className="mx-auto w-full max-w-7xl">
-      <PageHeader title="Settings" subtitle="Profile, appearance, motion and 3D quality preferences." />
-      <GlassPanel level={2} className="p-6">
-        <p className="text-sm text-muted-foreground">
-          This module is wired to the campus database and agent pipeline.
-        </p>
-      </GlassPanel>
-    </div>
-  );
-}
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87

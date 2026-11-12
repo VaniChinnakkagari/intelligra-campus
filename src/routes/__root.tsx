@@ -81,23 +81,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-<<<<<<< HEAD
       { title: "MITS Campus AI — Intelligent Campus, Connected by AI" },
-=======
-      { title: "Nexus Campus AI — Intelligent Campus, Connected by AI" },
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
       {
         name: "description",
         content:
           "An intelligent multi-agent system that coordinates classrooms, faculty, students, resources, timetables and transportation in real time.",
       },
-<<<<<<< HEAD
       { name: "author", content: "MITS Campus AI" },
       { property: "og:title", content: "MITS Campus AI" },
-=======
-      { name: "author", content: "Nexus Campus AI" },
-      { property: "og:title", content: "Nexus Campus AI" },
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
       {
         property: "og:description",
         content: "Multi-agent smart campus management with real AI algorithms and 3D visualisation.",
@@ -111,11 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-<<<<<<< HEAD
       { rel: "icon", href: "/ai-core.png", type: "image/png" },
-=======
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

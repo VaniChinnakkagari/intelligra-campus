@@ -22,10 +22,7 @@ import { Route as AuthenticatedConflictsRouteImport } from './routes/_authentica
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedDecisionsRouteImport } from './routes/_authenticated/decisions'
 import { Route as AuthenticatedKnowledgeRouteImport } from './routes/_authenticated/knowledge'
-<<<<<<< HEAD
 import { Route as AuthenticatedMenteesRouteImport } from './routes/_authenticated/mentees'
-=======
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
 import { Route as AuthenticatedNotificationsRouteImport } from './routes/_authenticated/notifications'
 import { Route as AuthenticatedRequestsRouteImport } from './routes/_authenticated/requests'
 import { Route as AuthenticatedResourcesRouteImport } from './routes/_authenticated/resources'
@@ -98,14 +95,11 @@ const AuthenticatedKnowledgeRoute = AuthenticatedKnowledgeRouteImport.update({
   path: '/knowledge',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
-<<<<<<< HEAD
 const AuthenticatedMenteesRoute = AuthenticatedMenteesRouteImport.update({
   id: '/mentees',
   path: '/mentees',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
-=======
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
 const AuthenticatedNotificationsRoute =
   AuthenticatedNotificationsRouteImport.update({
     id: '/notifications',
@@ -157,10 +151,7 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/decisions': typeof AuthenticatedDecisionsRoute
   '/knowledge': typeof AuthenticatedKnowledgeRoute
-<<<<<<< HEAD
   '/mentees': typeof AuthenticatedMenteesRoute
-=======
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
   '/notifications': typeof AuthenticatedNotificationsRoute
   '/requests': typeof AuthenticatedRequestsRoute
   '/resources': typeof AuthenticatedResourcesRoute
@@ -182,10 +173,7 @@ export interface FileRoutesByTo {
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/decisions': typeof AuthenticatedDecisionsRoute
   '/knowledge': typeof AuthenticatedKnowledgeRoute
-<<<<<<< HEAD
   '/mentees': typeof AuthenticatedMenteesRoute
-=======
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
   '/notifications': typeof AuthenticatedNotificationsRoute
   '/requests': typeof AuthenticatedRequestsRoute
   '/resources': typeof AuthenticatedResourcesRoute
@@ -209,10 +197,7 @@ export interface FileRoutesById {
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/decisions': typeof AuthenticatedDecisionsRoute
   '/_authenticated/knowledge': typeof AuthenticatedKnowledgeRoute
-<<<<<<< HEAD
   '/_authenticated/mentees': typeof AuthenticatedMenteesRoute
-=======
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
   '/_authenticated/notifications': typeof AuthenticatedNotificationsRoute
   '/_authenticated/requests': typeof AuthenticatedRequestsRoute
   '/_authenticated/resources': typeof AuthenticatedResourcesRoute
@@ -236,10 +221,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/decisions'
     | '/knowledge'
-<<<<<<< HEAD
     | '/mentees'
-=======
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
     | '/notifications'
     | '/requests'
     | '/resources'
@@ -261,10 +243,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/decisions'
     | '/knowledge'
-<<<<<<< HEAD
     | '/mentees'
-=======
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
     | '/notifications'
     | '/requests'
     | '/resources'
@@ -287,10 +266,7 @@ export interface FileRouteTypes {
     | '/_authenticated/dashboard'
     | '/_authenticated/decisions'
     | '/_authenticated/knowledge'
-<<<<<<< HEAD
     | '/_authenticated/mentees'
-=======
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
     | '/_authenticated/notifications'
     | '/_authenticated/requests'
     | '/_authenticated/resources'
@@ -400,7 +376,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedKnowledgeRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-<<<<<<< HEAD
     '/_authenticated/mentees': {
       id: '/_authenticated/mentees'
       path: '/mentees'
@@ -408,8 +383,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedMenteesRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-=======
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
     '/_authenticated/notifications': {
       id: '/_authenticated/notifications'
       path: '/notifications'
@@ -472,10 +445,7 @@ interface AuthenticatedRouteRouteChildren {
   AuthenticatedDashboardRoute: typeof AuthenticatedDashboardRoute
   AuthenticatedDecisionsRoute: typeof AuthenticatedDecisionsRoute
   AuthenticatedKnowledgeRoute: typeof AuthenticatedKnowledgeRoute
-<<<<<<< HEAD
   AuthenticatedMenteesRoute: typeof AuthenticatedMenteesRoute
-=======
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
   AuthenticatedNotificationsRoute: typeof AuthenticatedNotificationsRoute
   AuthenticatedRequestsRoute: typeof AuthenticatedRequestsRoute
   AuthenticatedResourcesRoute: typeof AuthenticatedResourcesRoute
@@ -495,10 +465,7 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedDashboardRoute: AuthenticatedDashboardRoute,
   AuthenticatedDecisionsRoute: AuthenticatedDecisionsRoute,
   AuthenticatedKnowledgeRoute: AuthenticatedKnowledgeRoute,
-<<<<<<< HEAD
   AuthenticatedMenteesRoute: AuthenticatedMenteesRoute,
-=======
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
   AuthenticatedNotificationsRoute: AuthenticatedNotificationsRoute,
   AuthenticatedRequestsRoute: AuthenticatedRequestsRoute,
   AuthenticatedResourcesRoute: AuthenticatedResourcesRoute,

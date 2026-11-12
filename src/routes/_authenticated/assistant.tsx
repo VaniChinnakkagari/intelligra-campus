@@ -1,21 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/AppShell";
 import { GlassPanel } from "@/components/Glass";
-<<<<<<< HEAD
 import { useState, useRef, useEffect } from "react";
 import { Send, Bot, User, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { supabase } from "@/integrations/supabase/client";
 import { useSession, useRole, type Role } from "@/hooks/useAuth";
-=======
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
 
 export const Route = createFileRoute("/_authenticated/assistant")({
   component: Page,
 });
 
-<<<<<<< HEAD
 type Message = {
   id: string;
   role: "user" | "assistant";
@@ -235,21 +231,10 @@ function Page() {
             </Button>
           </div>
         </div>
-=======
-function Page() {
-  return (
-    <div className="mx-auto w-full max-w-7xl">
-      <PageHeader title="AI Assistant" subtitle="Ask the campus agents anything about rooms, labs, routes or schedules." />
-      <GlassPanel level={2} className="p-6">
-        <p className="text-sm text-muted-foreground">
-          This module is wired to the campus database and agent pipeline.
-        </p>
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
       </GlassPanel>
     </div>
   );
 }
-<<<<<<< HEAD
 
 // ═══════════════════════════════════════════════════════════
 // INTENT DETECTION
@@ -657,5 +642,3 @@ async function getStats() {
     type: "success" as const,
   };
 }
-=======
->>>>>>> 4ed5064e0872a8573dbceff1cf59df711efc6f87
